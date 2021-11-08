@@ -1,0 +1,34 @@
+{% extends "choices/base.html" %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'form/form.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if choice_num %}
+        <form action="/choices/" method="post">
+        {% csrf_token %}
+        <ul class="flex-outer">
+            {% for i in choice_num %}
+                <li>
+                    {{ form.non_field_errors }}
+                    {{ form.choice.errors }}
+                    <label for="{{ form.choice.id_for_label }}">Choice {{i}}:</label>
+                    {{ form.choice }}
+                </li>
+            {% endfor %}
+        <input type="submit" value="Submit">
+        </ul>
+    {% else %}
+        <form action="/choiceset/" method="post">
+        {% csrf_token %}
+        <ul class="flex-outer">
+            {{ form.as_ul }}
+        <input type="submit" value="Submit">
+        </ul>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

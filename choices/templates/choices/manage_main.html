@@ -1,0 +1,38 @@
+{% extends "choices/base.html" %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'manage/main.css' %}" />
+{% endblock %}
+{% block content %}
+
+    <a class="randomize app-anchor" href="{% url 'choiceSet' %}">Make New Choice Set</a>
+    {% for choice_set in choice_set_list %}
+        <div class="choice-set-box" id={{choice_set.id}}>
+            <p hidden="true">{{choice_set_edit_url}} {{choice_set_delete_url}} {{choice_set.id}}</p>
+            <p class="choice-set" >{{choice_set.name}}</p>
+            <input class="button expand-shrink-btn" id="expand-shrik-btn-{{choice_set.id}}" type="button" value="expand">
+            <input hidden="true" class="input input-set" type="input">
+            <input class="button change-name-btn" type="button" value="change name">
+            <input class="button delete-btn" type="button" value="delete">
+            <input hidden="true" class="button save-btn" type="button" value="save">
+            {% for key, choice_list in choice_dict.items %}
+                {% if key == choice_set.id %}
+                    <div class="manage-choice-box" hidden="true">
+                        {% for choice in choice_list %}
+                            <div class="choice-box">
+                                <p>{{choice.choice}}</p>
+                                <input class="input choice-input" type="input" hidden="true">
+                                <input class="button" type="button" value="change name">
+                                <input class="button" type="button" value="save" hidden="true">
+                                <p hidden="true">{{choice_edit_url}} {{choice.id}}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+<script type="module" src="{% static 'manage/main.js' %}"></script>
+{% endblock %}

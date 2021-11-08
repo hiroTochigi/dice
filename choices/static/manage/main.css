@@ -1,0 +1,29 @@
+.manage-choice-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[hidden]{
+    display: none;
+}
+
+.choice-set-box{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+
+.choice-box{
+    background-color: aliceblue;
+    width: 50%;
+}
+
+.button{
+    width: 100%;
+}
+
+.input{
+    line-height: 2rem;
+    width: 97%;
+}

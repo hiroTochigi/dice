@@ -1,0 +1,81 @@
+{% extends "choices/base.html" %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/dice.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/choicebox.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="dice-item">
+    <h1>Roll Dice App</h1>
+        <div class="content">
+            <div class="die">
+                <figure class="face face-1"></figure>
+                <figure class="face face-2"></figure>
+                <figure class="face face-3"></figure>
+                <figure class="face face-4"></figure>
+                <figure class="face face-5"></figure>
+                <figure class="face face-6"></figure>
+                <figure class="face face-7"></figure>
+                <figure class="face face-8"></figure>
+                <figure class="face face-9"></figure>
+                <figure class="face face-10"></figure>
+                <figure class="face face-11"></figure>
+                <figure class="face face-12"></figure>
+                <figure class="face face-13"></figure>
+                <figure class="face face-14"></figure>
+                <figure class="face face-15"></figure>
+                <figure class="face face-16"></figure>
+                <figure class="face face-17"></figure>
+                <figure class="face face-18"></figure>
+                <figure class="face face-19"></figure>
+                <figure class="face face-20"></figure>
+            </div>
+        </div>
+        <div class="content">
+            <div class="die">
+                <figure class="face face-1"></figure>
+                <figure class="face face-2"></figure>
+                <figure class="face face-3"></figure>
+                <figure class="face face-4"></figure>
+                <figure class="face face-5"></figure>
+                <figure class="face face-6"></figure>
+                <figure class="face face-7"></figure>
+                <figure class="face face-8"></figure>
+                <figure class="face face-9"></figure>
+                <figure class="face face-10"></figure>
+                <figure class="face face-11"></figure>
+                <figure class="face face-12"></figure>
+                <figure class="face face-13"></figure>
+                <figure class="face face-14"></figure>
+                <figure class="face face-15"></figure>
+                <figure class="face face-16"></figure>
+                <figure class="face face-17"></figure>
+                <figure class="face face-18"></figure>
+                <figure class="face face-19"></figure>
+                <figure class="face face-20"></figure>
+            </div>
+        </div>
+
+        <a href="" class="randomize app-anchor">Roll!</a>
+        <a href="{% url 'manage'%}" class="app-anchor">Manage Choices</a>
+    </div>
+    <div class="table-item">
+        {% for choice_set in choice_set_list %}
+            <p id={{choice_set.id}} class="choice_set">{{choice_set.name}}</p>
+        {% endfor %}
+    </div>
+</div>
+<div class="choice-box">
+    {% for choice in choice_list %}
+        <p class="choice belongid-{{choice.belong.id}}">{{choice.choice}}</p>
+    {% endfor %}
+</div>
+
+<script type="module" src="{% static 'main/dice.js' %}"></script>
+<script type="module" src="{% static 'main/choose_choice.js' %}"></script>
+<script type="module" src="{% static 'main/get_all_dom_as_array.js' %}"></script>
+<script type="module" src="{% static 'main/show_choice.js' %}"></script>
+{% endblock %}

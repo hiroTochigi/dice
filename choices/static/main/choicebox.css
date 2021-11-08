@@ -1,0 +1,8 @@
+.choice-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choice {
+    padding: 5px;
+}
