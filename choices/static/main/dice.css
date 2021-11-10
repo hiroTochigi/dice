@@ -96,6 +96,14 @@
 .die[data-face="15"] {
   transform: rotateX(11deg) rotateY(-540deg);
 }
+#die-1 .face{
+  border-bottom: 86px solid rgba(30, 180, 20, 0.75);
+}
+
+#die-2 .face{
+  border-bottom: 86px solid rgba(170, 20, 180, 0.75);
+}
+
 .die .face {
   position: absolute;
   left: 50%;
@@ -103,7 +111,6 @@
   margin: 0 -50px;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 86px solid rgba(30, 180, 20, 0.75);
   width: 0px;
   height: 0px;
   transform-style: preserve-3d;
