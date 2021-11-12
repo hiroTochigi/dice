@@ -1,6 +1,14 @@
 
-import {choice_set_list, all_choice_list} from './get_all_dom_as_array.js'
+import {
+    choice_set_list,
+    all_choice_list,
+    all_dice_mode_btn
+} from './get_all_dom_as_array.js'
 import { get_focus } from './show_choice.js';
+import { get_mode } from './dice.js'
+
+const dice_2_box = document.getElementById("die-2").parentElement
+dice_2_box.hidden = true
 
 const add_event_on_choice_set = (choice_set_list) => {
     for (let i = 0; i<choice_set_list.length; i++ ){
@@ -56,6 +64,22 @@ const change_choice_set =(focus_id, choice_set_list) => {
     focused_choice_set.style.color = 'white';
 }
 
+const control_dice_box = (mode) => {
+    dice_2_box.hidden = (mode === "Default") ? true : false
+}
+
+const add_event_on_dice_mode_btn = (all_dice_mode_btn) => {
+
+    for (let i = 0; i<all_dice_mode_btn.length; i++ ){
+        all_dice_mode_btn[i].onclick = () => {
+            const mode = all_dice_mode_btn[i].defaultValue
+            get_mode(mode)
+            control_dice_box(mode)
+        }
+    }
+}
+
+add_event_on_dice_mode_btn(all_dice_mode_btn);
 add_event_on_choice_set(choice_set_list);
 add_id_on_choice(all_choice_list);
 
