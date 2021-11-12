@@ -27,7 +27,6 @@ $('ul > li > a').click(function () {
   reset()
   rollTo($(this).attr('href'))
   
-  return false
 })
 
 function getFace(face_1, face_2, mode) {
