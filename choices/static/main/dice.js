@@ -16,7 +16,12 @@ var $die_1 = $('#die-1'),
     face_2,
     timeoutId,
     transitionDuration = 100, 
-    animationDuration  = 1000
+    animationDuration  = 1000,
+    mode = "Default"
+
+export const get_mode = (next_mode) => {
+    mode = next_mode
+}
 
 $('ul > li > a').click(function () {
   reset()
@@ -24,6 +29,16 @@ $('ul > li > a').click(function () {
   
   return false
 })
+
+function getFace(face_1, face_2, mode) {
+  if (mode === "Default"){
+    return face_1
+  }else if(mode === "Advantage"){
+    return (face_1 <= face_2) ? face_1 : face_2
+  }else{
+    return (face_1 > face_2) ? face_1 : face_2
+  }
+}
 
 function randomFace(face) {
   var newFace = Math.floor((Math.random() * sides)) + initialSide
@@ -60,8 +75,9 @@ $('.randomize, .die').click(function () {
     face_2 = randomFace(face_2)
     rollTo()
     
-    // specify the mode here
-    get_face(face_1)
+    const face = getFace(face_1, face_2, mode)
+
+    get_face(face)
   }, animationDuration)
   
   return false

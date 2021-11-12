@@ -14,10 +14,10 @@
     <nav class="navbar">
       <ul class="nav-links">
         <li class="nav-item" ><a href="{% url 'main' %}">Home</a></li>
-        <li class="nav-item" ><a class="nav-item" href="{% url 'manage' %}">Manage Choices</a></li>
+        <li class="nav-item" ><a href="{% url 'manage' %}">Manage Choices</a></li>
         {% block dynamic_nav %}{% endblock %}
       </ul>
-  </nav>
+    </nav>
       {% block content %}{% endblock %}
   </body>
 </html>

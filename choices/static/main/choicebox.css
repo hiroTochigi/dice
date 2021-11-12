@@ -6,3 +6,13 @@
 .choice {
     padding: 5px;
 }
+
+.dice-mode-choice input{
+    margin: 10px 10px 40px 10px;
+}
+
+.dice-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
