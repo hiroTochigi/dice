@@ -1,6 +1,38 @@
 .choice-box {
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.choice-box p,
+ .table-item p,
+ #your-choice,
+ .dice-mode-choice p{
+    border: 1px solid white;
+    border-radius: 60%;
+    background-color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+#your-choice{
+    background-color: black;
+    font-size: 2rem;
+    width: 40%;
+    color: white;
+    text-align: center;
+}
+
+.dice-mode-choice p{
+    display: inline-block;
+    padding: 1rem;
+    margin: 5px;
+}
+
+.table-item p{
+    text-align: center ;
 }
 
 .choice {
@@ -8,11 +40,13 @@
 }
 
 .dice-mode-choice input{
-    margin: 10px 10px 40px 10px;
+    margin: 10px 10px 10px 10px;
 }
 
 .dice-box{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
