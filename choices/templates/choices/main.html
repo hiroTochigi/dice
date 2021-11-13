@@ -9,11 +9,12 @@
 {% block content %}
 <div class="container">
     <div class="dice-item">
-        <h1>Roll Dice App</h1>
+        <p id="your-choice">Your Choice</p>
         <div class="dice-mode-choice">
-            <input class="button dice-mode-btn" type="button" value="Default">
-            <input class="button dice-mode-btn" type="button" value="Advantage">
-            <input class="button dice-mode-btn" type="button" value="Disadvantage">
+            <h2>Dice Mode</h2>
+            <p class="dice-mode-btn">Default</p>
+            <p class="dice-mode-btn">Advantage</p>
+            <p class="dice-mode-btn">Disadvantage</p>
         </div>
         <div class="dice-box">
             <div class="content">
@@ -70,6 +71,7 @@
         <a href="{% url 'manage'%}" class="app-anchor">Manage Choices</a>
     </div>
     <div class="table-item">
+        <h2>Choice Set</h2>
         {% for choice_set in choice_set_list %}
             <p id={{choice_set.id}} class="choice_set">{{choice_set.name}}</p>
         {% endfor %}

@@ -16,8 +16,9 @@ input[type="submit"]{
   display: inline-block;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
-  background-color: #999;
+  background-color: black;
 }
+
 a:active,
 .button:active,
 input[type="submit"]:active{

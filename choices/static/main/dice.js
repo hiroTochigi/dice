@@ -1,13 +1,5 @@
 import { get_face } from './show_choice.js'
 
-// Need to have switch here to hide dice
-// Need to have swtich to choose advantage or disadvantage
-// There are three modes
-// normal, advantage, and disadvantage
-// Normal mode, one dice is used
-// Advantage mode, two dices are used and bigger face is used
-// Disadvantage mode, two dices are used and smaller face is used
-
 var $die_1 = $('#die-1'),
     $die_2 = $('#die-2'),
     sides = 20,
@@ -29,7 +21,7 @@ $('ul > li > a').click(function () {
   
 })
 
-function getFace(face_1, face_2, mode) {
+function chooseFace(face_1, face_2, mode) {
   if (mode === "Default"){
     return face_1
   }else if(mode === "Advantage"){
@@ -74,7 +66,7 @@ $('.randomize, .die').click(function () {
     face_2 = randomFace(face_2)
     rollTo()
     
-    const face = getFace(face_1, face_2, mode)
+    const face = chooseFace(face_1, face_2, mode)
 
     get_face(face)
   }, animationDuration)
