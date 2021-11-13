@@ -9,7 +9,7 @@
 
 .choice-set-box{
     width: 80%;
-    margin: 0 auto;
+    margin: 100px auto;
 
 }
 
@@ -25,4 +25,13 @@
 .input{
     line-height: 2rem;
     width: 97%;
+}
+
+.choice-box{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.choice-set{
+    color: white;
 }
