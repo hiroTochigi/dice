@@ -10,12 +10,12 @@
     {% for choice_set in choice_set_list %}
         <div class="choice-set-box" id={{choice_set.id}}>
             <p hidden="true">{{choice_set_edit_url}} {{choice_set_delete_url}} {{choice_set.id}}</p>
-            <p class="choice-set" >{{choice_set.name}}</p>
-            <input class="button expand-shrink-btn" id="expand-shrik-btn-{{choice_set.id}}" type="button" value="expand">
+            <h2 class="choice-set" >{{choice_set.name}}</h2>
+            <input class="button expand-shrink-btn" id="expand-shrik-btn-{{choice_set.id}}" type="button" value="Expand">
             <input hidden="true" class="input input-set" type="input">
-            <input class="button change-name-btn" type="button" value="change name">
-            <input class="button delete-btn" type="button" value="delete">
-            <input hidden="true" class="button save-btn" type="button" value="save">
+            <input class="button change-name-btn" type="button" value="Change Name">
+            <input class="button delete-btn" type="button" value="Delete">
+            <input hidden="true" class="button save-btn" type="button" value="Save">
             {% for key, choice_list in choice_dict.items %}
                 {% if key == choice_set.id %}
                     <div class="manage-choice-box" hidden="true">
@@ -23,8 +23,8 @@
                             <div class="choice-box">
                                 <p>{{choice.choice}}</p>
                                 <input class="input choice-input" type="input" hidden="true">
-                                <input class="button" type="button" value="change name">
-                                <input class="button" type="button" value="save" hidden="true">
+                                <input class="button" type="button" value="Change Name">
+                                <input class="button" type="button" value="Save" hidden="true">
                                 <p hidden="true">{{choice_edit_url}} {{choice.id}}</p>
                             </div>
                         {% endfor %}

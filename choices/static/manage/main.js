@@ -53,14 +53,14 @@ for (let i=0; i<choice_set_arr.length; i++){
     const [edit_changeset_url, delete_changeset_url, choice_set_id] = hidden.innerHTML.split(' ')
     
     expand_shrik_btn.onclick = () => {
-        change_value_same_class(".expand-shrink-btn", "expand")
+        change_value_same_class(".expand-shrink-btn", "Expand")
         if (manage_choice_box.hidden){
             hide_all_choice_box()
             manage_choice_box.hidden = false
-            expand_shrik_btn.value = "shrink"
+            expand_shrik_btn.value = "Shrink"
         }else{
             hide_all_choice_box()
-            expand_shrik_btn.value = "expand"
+            expand_shrik_btn.value = "Expand"
         }
         
     }
@@ -71,13 +71,13 @@ for (let i=0; i<choice_set_arr.length; i++){
             save_btn.hidden = false
             expand_shrik_btn.hidden = true
             delete_btn.hidden = true
-            change_btn.value = "cancel"
+            change_btn.value = "Cancel"
         }else{
             input.hidden = true
             save_btn.hidden = true
             expand_shrik_btn.hidden = false 
             delete_btn.hidden = false
-            change_btn.value = "change name"
+            change_btn.value = "Change Name"
         }
     }
 
@@ -149,14 +149,14 @@ for (let i=0; i<choice_set_arr.length; i++){
         const [p, input, btn, save_btn, hidden] = all_div[ii].children
 
         btn.onclick = () => {
-            if (btn.value === 'change name'){
+            if (btn.value === 'Change Name'){
                 input.hidden = false
                 save_btn.hidden = false
-                btn.value = "return"
-            }else if (btn.value === 'return'){
+                btn.value = "Cancel"
+            }else if (btn.value === 'Cancel'){
                 input.hidden = true
                 save_btn.hidden = true
-                btn.value = "change name"
+                btn.value = "Change Name"
             }
         }
 
@@ -188,7 +188,7 @@ for (let i=0; i<choice_set_arr.length; i++){
             input.value = null
             input.hidden = true
             save_btn.hidden = true
-            btn.value = "change name"
+            btn.value = "Change Name"
         }
 
     }
