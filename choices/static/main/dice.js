@@ -25,9 +25,9 @@ function chooseFace(face_1, face_2, mode) {
   if (mode === "Default"){
     return face_1
   }else if(mode === "Advantage"){
-    return (face_1 <= face_2) ? face_1 : face_2
-  }else{
     return (face_1 > face_2) ? face_1 : face_2
+  }else{
+    return (face_1 <= face_2) ? face_1 : face_2
   }
 }
 
