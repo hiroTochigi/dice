@@ -101,6 +101,12 @@ for (let i=0; i<choice_set_arr.length; i++){
             }).then(res => res.json())
             .then(response => {
                 choice_set_name.innerHTML = response['new_val']
+                input.hidden = true
+                save_btn.hidden = true
+                expand_shrik_btn.hidden = false 
+                change_btn.value = "Change Name"
+                delete_btn.hidden = false
+                input.value = ""
             })
             .catch(error => console.error('Error:', error));
         }
