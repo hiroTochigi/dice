@@ -60,7 +60,16 @@ input[type="submit"] {
     display: block;
 }
 
-li label {
+li label,
+.errorlist li {
   font-size: 1.5rem;
   color: white;
+}
+
+li label{
+  color: white;
+}
+
+.errorlist li{
+  color: red;
 }
