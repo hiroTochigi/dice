@@ -2,8 +2,6 @@
 const choice_box_arr = Array.from(document.querySelectorAll(".manage-choice-box"));
 const choice_set_arr = Array.from(document.querySelectorAll(".choice-set-box"));
 
-
-
 const getCookie = (name) => {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {

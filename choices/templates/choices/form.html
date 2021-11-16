@@ -15,7 +15,7 @@
                 <li>
                     {{ form.non_field_errors }}
                     {{ form.choice.errors }}
-                    <label for="{{ form.choice.id_for_label }}">Choice {{i}}:</label>
+                    <label for="{{ form.choice.id_for_label }}">Choice {{i|add:1}}:</label>
                     {{ form.choice }}
                 </li>
             {% endfor %}
