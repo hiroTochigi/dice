@@ -26,6 +26,7 @@ input[type="submit"]:active{
 }
 a.app-anchor:hover,
 .button:hover,
+.dice-mode-btn:hover,
 input[type="submit"]:hover{
   background-color: #666;
 }
