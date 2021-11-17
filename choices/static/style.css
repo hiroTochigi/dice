@@ -6,7 +6,8 @@ body {
 
 a.app-anchor,
 .button,
-input[type="submit"]{
+input[type="submit"],
+.nav-item{
   text-align: center;
   color: #fff;
   text-decoration: none;
@@ -21,13 +22,16 @@ input[type="submit"]{
 
 a:active,
 .button:active,
-input[type="submit"]:active{
+input[type="submit"]:active,
+.nav-item:active{
   background-color: #333;
 }
+
 a.app-anchor:hover,
 .button:hover,
 .dice-mode-btn:hover,
-input[type="submit"]:hover{
+input[type="submit"]:hover,
+.nav-item:hover{
   background-color: #666;
 }
 a.randomize {
