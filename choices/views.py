@@ -36,7 +36,11 @@ def managePage(request):
         'choice_set_edit_url': request.build_absolute_uri(reverse('editChoiceSet')),
         'choice_set_delete_url': request.build_absolute_uri(reverse('deleteChoiceSet')),
         'choice_set_list' : choice_set_list,
-        'choice_dict' : { choice_set.id : list(Choice.objects.filter(belong=choice_set)) for choice_set in choice_set_list }
+        'choice_dict' : { 
+                choice_set.id : 
+                sorted(list(Choice.objects.filter(belong=choice_set)), key=lambda el:el.id) 
+                for choice_set in choice_set_list 
+            }
     }
     
     return render(request, 'choices/manage_main.html', data)
@@ -47,7 +51,7 @@ def mainPage(request):
     choice_list = Choice.objects.all()
     data = {
             'choice_set_list': choice_set_list,
-            'choice_list': choice_list
+            'choice_list': sorted(choice_list, key=lambda el:el.id)
         }
     return render(request, 'choices/main.html', data)
 
